@@ -1,576 +1,213 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Small</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Small">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Small">
-<meta property="og:description">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Small">
-<meta name="twitter:description">
-  
-  
-  <link rel="stylesheet" href="/css/style.css">
+    <title>Small</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Eric">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Eric</a></h1>
-		</hgroup>
-
+  <body>
+    <header>
+      <div>
 		
-		<p class="header-subtitle">没有什么不同</p>
-		
-
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-						</div>
-					</nav>
-				</section>
-				
-				
-				
-				
-
-				
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Small" title="Small"/></a>
 			</div>
-		</div>
-	</header>				
-</div>
-
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Eric</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
 			
-				<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
-			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Small">Small</a></h1>
+				<h2 class="blog-motto">没有什么不同</h2>
 			</div>
-			<hgroup>
-			  <h1 class="header-author">Eric</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">没有什么不同</p>
-			
-			<nav class="header-menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
 				<ul>
-				
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
 					
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-
-      <div class="body-wrap">
-  
-    <article id="post-史上最新版GitHub-Hexo配置系列教程-Hexo-GitHub关联-三" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/21/史上最新版GitHub-Hexo配置系列教程-Hexo-GitHub关联-三/" class="article-date">
-  	<time datetime="2016-03-21T14:58:49.000Z" itemprop="datePublished">2016-03-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/21/史上最新版GitHub-Hexo配置系列教程-Hexo-GitHub关联-三/">史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一篇中我们介绍了如何配置GitHub端的具体操作,接下来,就是将Hexo与GitHub进行关联,然后就是见证奇迹的时刻. Let’s Go!</p>
-<h2 id="在Hexo配置文件中关联GitHub账号"><a href="#在Hexo配置文件中关联GitHub账号" class="headerlink" title="在Hexo配置文件中关联GitHub账号"></a>在Hexo配置文件中关联GitHub账号</h2><ul>
-<li>1.找到刚才所建的目录(F:\Hexo下),编辑 <code><font size="3" color="#E87B8F">_config.yml</font></code>,拖到最下方,找到<strong>deploy</strong>标签,然后更为如下配置,<em>注意</em>:你自己在修改时,需要将 <em>suericze</em>修改为自己的用户名<td class="code"><pre><span class="label">deploy:</span><br>type: git<br>repository: <a href="https://github" target="_blank" rel="external">https://github</a><span class="preprocessor">.com</span>/suericze/suericze<span class="preprocessor">.github</span><span class="preprocessor">.io</span><span class="preprocessor">.git</span><br>branch: master<br></pre></td></li>
-<li>2.注意: 因yml格式问题,所有键值对的”:”冒号后面必须跟有一个空格</li>
-<li>3.注意: 自Hexo 3.0以后,type类型都为 git,而非 github</li>
-<li>4.然后在F:/Hexo目录下,右键,选择<strong>Git Bash</strong>,输入以下命令即可完成部署和同步  <td class="code"><pre><span class="label">命令如下:</span><br>    $ hexo generate 或 hexo g<br>    $ hexo deploy 或 hexo d<br>  </pre></td></li>
-<li>5.Ok,到此我们的博客已经完全搭建并关联起来了,现在在浏览器中访问<code><font sixe="3" color="#E87B8F">suericze.github.io</font></code>即可看到自己的成就.</li>
-</ul>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>1.每次在本地进行改动后,不管是什么改动,都需要在F:\Hexo 文件夹下打开<strong>Git Bash</strong>,执行<code><font size="3" color="#E87B8F">hexo g</font></code></li>
-<li>2.如果需要同步到github中,则在执行完<code><font size="3" color="#E87B8F">hexo g</font></code>命令后,再次执行<code><font size="3" color="#E87B8F">hexo d</font></code>即可</li>
-<li>3.在执行<code><font size="3" color="#E87B8F">hexo d</font></code>命令时,会让输入你的github邮箱和密码,在输入密码时为了安全考虑,输入字符时是不会显示的,请放心输入</li>
-<li>4.有的电脑在执行<code><font size="3" color="#E87B8F">hexo d</font></code>命令时,会出现<strong>ERROR Deployer not found: github</strong> 的错误提示,该错误原因有以下几点<pre>
-1. 在_config.yml文件中,deploy模块中冒号后面没有加空格
-2. 将type类型写成了github,正确写法是git
-3. 在改文件夹下执行 npm install hexo-deployer-git --save 命令后重新执行 hexo d命令
-4. 将Git Bash命令关掉,重新打开执行
-</pre></li>
-<li>5.在github端设置完成后,有时候直接访问会出现404错误,这是正常的,一般等待十分钟左右就可以访问了,如果还不行,可能是你在注册账号的时候没有验证邮箱中的邮件.</li>
-<li>6.如遇到其他不可解决的问题,可以尝试删除.deploy_git文件夹及db.json,再次重新生成即可</li>
-</ul>
-<h2 id="发布一篇文章"><a href="#发布一篇文章" class="headerlink" title="发布一篇文章"></a>发布一篇文章</h2><p>既然博客已经搭建完毕,现在肯定想跃跃欲试,发布一篇博客,所以我们需要更改一些默认设置,来将站点打造成真正属于自己的网站.</p>
-<p>博客配置一般需要用到两个文件,一个是对全局进行配置的<code><font size="3" color="#E87B8F">_config.yml</font></code>文件,另一个是对主题进行配置的文件(暂时还没有设置,找到后后续补充)</p>
-<p><strong><em>F:\Hexo_config.yml</em></strong></p>
-<pre>
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
-# Site
-title: Test #网站名称
-subtitle: Test #副标题,在titile下方可看到
-description: des #描述,可自定义
-author: au #作者,可以在左下角看到
-language: zh-CN #中文
-timezone: PRC #时区 People's Republic of China，中华人民共和国
-</pre>
-
-<p>现在可以执行<code><font size="3" color="#E87B8F">hexo g</font></code>和<code><font size="3" color="#E87B8F">hexo d</font></code>命令来查看更改的效果了.</p>
-<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><ul>
-<li>1.在F:\Hexo下打开<strong>Git Bash</strong>命令,执行<code><font size="3" color="#E87B8F">hexo n “This my first blog”</font></code></li>
-<li>2.创建成功后,就可以在<code><font size="3" color="#E87B8F">F:\Hexo\source_posts</font></code>中看到该md文件,在这里,可以使用MarkdownPad 2 或者 记事本 打开,然后进行自定义更改</li>
-</ul>
-<pre>---
-title: This my first blog #这里是正文,可以更改
-date: 2016-03-21 22:58:49 #时间戳,一般不改
-tags: [Test] #分类标签
----
-#下面是正文,可以使用Markdown语法进行书写</pre>
-
-<ul>
-<li>3.然后执行<code><font size="3" color="#E87B8F">hexo g</font></code>和<code><font size="3" color="#E87B8F">hexo d</font></code>命令,即可在github上查看效果</li>
-</ul>
-<p>小贴士:当然,你也可以执行<code><font size="3" color="#E87B8F">hexo g</font></code>和<code><font size="3" color="#E87B8F">hexo s</font></code>命令在本地打开<code><font size="3" color="#E87B8F">localhost:4000</font></code>进行本地访问,然后在同步到GitHub上.</p>
-<p>ok,到此,你的Hexo博客已经完全搭建起来了,你自己也可以访问自己的独有站点,开启你的博客旅程吧,后期将写到Hexo的优化,欢迎童鞋们查阅~~~</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-GitHub系列教程/">Hexo+GitHub系列教程</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-史上最新版GitHub+Hexo配置系列教程-GitHub配置-二" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/21/史上最新版GitHub+Hexo配置系列教程-GitHub配置-二/" class="article-date">
-  	<time datetime="2016-03-21T08:31:28.000Z" itemprop="datePublished">2016-03-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/21/史上最新版GitHub+Hexo配置系列教程-GitHub配置-二/">史上最新版GitHub+Hexo配置系列教程-GitHub配置-二</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一篇中我们介绍了如何搭建Hexo本地博客,现在我们开始配置GitHub并进行关联Hexo.Let’s Go!</p>
-<h1 id="GitHub端操作"><a href="#GitHub端操作" class="headerlink" title="GitHub端操作"></a>GitHub端操作</h1><h2 id="注册GitHub"><a href="#注册GitHub" class="headerlink" title="注册GitHub"></a>注册GitHub</h2><p>在<a href="https://github.com/" target="_blank" rel="external">此处</a>进行注册,操作比较简单,再次就不多做赘述,不熟悉的可以看该<a href="http://wiki.jikexueyuan.com/project/github-basics/sign-up.html" target="_blank" rel="external">示例教程</a>.</p>
-<h2 id="创建Repository"><a href="#创建Repository" class="headerlink" title="创建Repository"></a>创建Repository</h2><p>在自己<a href="github.com/suericze">GitHub</a>主页点击右上角,创建Repository<br><img src="http://7xs3op.com1.z0.glb.clouddn.com/res.png" alt=""><br>进入创建界面后,<strong>注意</strong>:名字一定要与用户名一致,比如我的用户名是 <strong>SuericZe</strong>,创建的Respository一定要是<strong>SuericZe.github.io</strong>.<br><img src="http://7xs3op.com1.z0.glb.clouddn.com/rescreate%20new.png" alt=""><br>然后点击<strong>Create repository</strong>按钮,然后进入到该respository界面,点击右边Settings, 拉到最下方,找到GitHub Pages模块,点击 <strong>Launch automatic page generator</strong>,让GitHub生成GitHubPager<br><img src="http://7xs3op.com1.z0.glb.clouddn.com/page.png" alt=""><br>然后进入下一页,点击页面右下角绿色框按钮 <strong>Continue to layouts</strong>进入下一页<br><img src="http://7xs3op.com1.z0.glb.clouddn.com/2.png" alt=""><br>下一个界面是选择主题,但选择哪个无所谓,因为后面将要与Hexo关联,站点所有内容都将被Hexo博客所替换,所以直接点击 <strong>Publish page</strong><br><img src="http://7xs3op.com1.z0.glb.clouddn.com/3.png" alt=""></p>
-<p>然后,就可以进入到该界面,即代表设置完成,访问<a href="http://suericze.github.io" target="_blank" rel="external">SuericZe.github.io</a>即可看到自己独立的该域名网站.</p>
-<p><img src="http://7xs3op.com1.z0.glb.clouddn.com/4.png" alt=""></p>
-<p>此时点击<strong>Settings</strong>进入即可看到如下提示:<em>Your sit is published at <a href="http://suericze.github.io" target="_blank" rel="external">http://suericze.github.io</a></em><br><img src="http://7xs3op.com1.z0.glb.clouddn.com/5.png" alt=""></p>
-<h2 id="配置SSH-Keys"><a href="#配置SSH-Keys" class="headerlink" title="配置SSH Keys"></a>配置SSH Keys</h2><p>官方教程在此: <a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">点我</a>,很简单,在此简单翻译,以供英文不好的同学参考.</p>
-<p>SSH密钥是一个用来识别值得信赖的电脑在进行GitHub一些操作时,不用输入密码。用户可以生成一个SSH密钥，并按照本节所述的方法将公共密钥添加到你的GitHub帐户。</p>
-<p>我们建议你定期检查SSH密钥列表，并删除任何一个长时间没有使用的秘钥.</p>
-<ul>
-<li>小贴士:如果你安装的有GitHub的桌面版 ，你可以用它来克隆库而不是进行SSH密钥处理。它还配备了Git的Bash的工具，这是在Windows上运行的git命令的首选方式。</li>
-</ul>
-<h3 id="检测电脑中是否已有SSH-秘钥"><a href="#检测电脑中是否已有SSH-秘钥" class="headerlink" title="检测电脑中是否已有SSH 秘钥"></a>检测电脑中是否已有SSH 秘钥</h3><ul>
-<li>在你生成SSH秘钥之前,如果你有任意一个SSH秘钥,你都要检测一下;</li>
-</ul>
-<p>检测步骤:</p>
-<ul>
-<li>1: 在任意目录右键,选择 <strong>Git Bash</strong></li>
-<li>2: 输入 <code>ls -al ~/.ssh</code> 命令查看是否存在SSH秘钥<pre class="command-line">
-<span class="command">ls -al ~/.ssh</span>
-<span class="comment"># Lists the files in your .ssh directory, if they exist</span>
-</pre></li>
-<li>3:如果你看到有公共的SSH秘钥已经存在的话,请检测SSH列表的路径;</li>
-</ul>
-<p>默认情况下,公共秘钥的文件名是下列之一:</p>
-<ul>
-<li><em>id_dsa.pub</em></li>
-<li><em>id_ecdsa.pub</em></li>
-<li><em>id_ecdsa.pub</em></li>
-<li><em>id_ecdsa.pub</em></li>
-</ul>
-<p>如果没有一个现有的公共和私有密钥，或者不希望使用任何可用的SSH秘钥来连接到GitHub上，请生成一个新的SSH密钥。</p>
-<p>如果你看到列出现有的公共和私有密钥（例如id_rsa.pub和id_rsa ），你想使用连接到GitHub上，你可以将你的SSH密钥放到ssh-agent(下面会写到) .</p>
-<ul>
-<li>小贴士:如果你看到的〜/ .ssh不存在或者错误，不要担心！我们将创建它，并生成一个新的SSH密钥</li>
-</ul>
-<h3 id="生成新的SSH密钥并将其添加到ssh-agent中"><a href="#生成新的SSH密钥并将其添加到ssh-agent中" class="headerlink" title="生成新的SSH密钥并将其添加到ssh-agent中"></a>生成新的SSH密钥并将其添加到ssh-agent中</h3><ul>
-<li><ol>
-<li>在任意目录右键,选择<strong>Git Bash</strong></li>
-</ol>
-</li>
-<li><ol>
-<li>输入<code>ssh-keygen -t rsa -b 4096 -C “your_email@example.com”</code> (将邮箱替换为你自己的地址)<pre class="command-line">
-<span class="command">$ ssh-keygen -t rsa -b 4096 -C "<em>your_email@example.com</em>"</span>
-<span class="comment"># Creates a new ssh key, using the provided email as a label</span>
-<span class="output">Generating public/private rsa key pair.</span>
-</pre></li>
-</ol>
-</li>
-<li>3.当你提示“输入要保存密钥的文件”，然后按Enter键。接受默认文件位置。<pre class="command-line">
-<span class="output">Enter a file in which to save the key (/Users/<em>you</em>/.ssh/id_rsa): <em>[Press enter]</em></span>
-</pre></li>
-<li>4.在提示符下，键入一个安全密码(可以为空)。有关详细信息，请参阅“<a href="https://help.github.com/articles/working-with-ssh-key-passphrases/" target="_blank" rel="external">使用SSH密钥口令</a>”一节。<pre class="command-line">
-<span class="output">Enter passphrase (empty for no passphrase): <em>[Type a passphrase]</em></span>
-<span class="output">Enter same passphrase again: <em>[Type passphrase again]</em></span>
-</pre></li>
-<li>5.将ssh秘钥添加到 ssh-agent,在任意目录右键,选择<strong>Git Bash</strong>后输入命令确保ssh-agent的启用<pre class="command-line">
-<span class="comment"># start the ssh-agent in the background</span>
-<span class="command">$ eval "$(ssh-agent -s)"</span>
-<span class="output">Agent pid 59566</span>
-</pre></li>
-<li><ol>
-<li>添加你的SSH密钥到ssh-agent 。如果你使用现有的SSH密钥，而不是生成新的SSH密钥，你需要替换现有的私有密钥文件的名称，以取代id_rsa的命令。<pre class="command-line">
-$ ssh-add ~/.ssh/id_rsa
-</pre>
-
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="添加新的SSH密钥到你的帐户GitHub中"><a href="#添加新的SSH密钥到你的帐户GitHub中" class="headerlink" title="添加新的SSH密钥到你的帐户GitHub中"></a>添加新的SSH密钥到你的帐户GitHub中</h3><p>要配置GitHub的帐户需要使用新的（或现有的） SSH密钥，你还需要将其添加到你的帐户GitHub中。</p>
-<ul>
-<li>1.复制SSH密钥到剪贴板</li>
-</ul>
-<p>小贴士:如果你的SSH密钥文件具有与示例代码不同的名称，请修改文件名，以符合当前的设置。当复制你的秘钥时，不添加任何新行或空格。</p>
-<pre class="command-line">
-$ clip &lt; ~/.ssh/id_rsa.pub
-# Copies the contents of the id_rsa.pub file to your clipboard
-</pre>
-
-<p>小贴士:如果clip命令没有执行，你可以找到隐藏的.ssh文件夹中，打开你喜欢的文本编辑器文件，并将其复制到剪贴板,一般是在<em>C:\Users\yourname.ssh</em>文件夹下的<em>id_rsa.pub</em>文件中,使用文本文档打开后复制内容即可</p>
-<ul>
-<li>2.在GitHub任何界面中,点击右上角个人资料照片,选择<em>Settings</em><br><img src="http://7xs3op.com1.z0.glb.clouddn.com/ssh%201.png" alt=""></li>
-<li>3.在用户设置栏中，点击<em>SSH keys</em></li>
-</ul>
-<p><img src="http://7xs3op.com1.z0.glb.clouddn.com/ssh%202.png" alt=""></p>
-<ul>
-<li>4.然后点击 <em>New SSH key</em></li>
-<li>5.在“Title”字段中，为新的密钥添加描述性标签。例如，如果您使用的是个人的Mac ，您可以调用这个关键的“个人的MacBook Air ” 。</li>
-<li>6.粘贴刚才复制的秘钥值到“key”框中。<br><img src="http://7xs3op.com1.z0.glb.clouddn.com/ssh%203.png" alt=""></li>
-<li>7.然后点击<em>Add SSH key</em></li>
-<li>8.确认操作,然后输入你的GitHub密码。</li>
-</ul>
-<h3 id="测试SSH秘钥是否添加成功"><a href="#测试SSH秘钥是否添加成功" class="headerlink" title="测试SSH秘钥是否添加成功"></a>测试SSH秘钥是否添加成功</h3><p>小贴士:当你测试你的连接，你需要使用你的密码，这是你先前创建的SSH密钥密码来验证这个动作。有关使用SSH密钥口令的详细信息，请参阅”<a href="https://help.github.com/articles/working-with-ssh-key-passphrases/" target="_blank" rel="external">使用SSH密钥口令</a>”一节。</p>
-<ul>
-<li>1.在任意位置右键,打开<strong>Git Bash</strong></li>
-<li>2.输入以下命令<code>ssh -T git@github.com</code><pre class="command-line">
-<span class="command">$ ssh -T git@github.com</span>
-<span class="comment"># Attempts to ssh to GitHub</span>
-</pre>
-你可能会看到这些警告之一：
-<pre class="command-line">
-<span class="output">The authenticity of host 'github.com (192.30.252.1)' can't be established.</span>
-<span class="output">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span>
-<span class="output">Are you sure you want to continue connecting (yes/no)?</span>
-</pre>
-
-</li>
-</ul>
-<pre class="command-line">
-<span class="output">The authenticity of host 'github.com (192.30.252.1)' can't be established.</span>
-<span class="output">RSA key fingerprint is nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span>
-<span class="output">Are you sure you want to continue connecting (yes/no)?</span>
-</pre>
-
-<p>小贴士:上面的例子列出了GitHub的IP地址为192.30.252.1 。当侦测GitHub上，你可能会看到一个IP地址范围。有关更多信息，请参阅“<a href="https://help.github.com/articles/what-ip-addresses-does-github-use-that-i-should-whitelist/" target="_blank" rel="external">不GitHub上使用什么IP地址，我应该列入白名单？</a> ”</p>
-<ul>
-<li>3.验证你看到消息中的指纹相匹配的以下信息，然后输入 <code>yes</code><pre class="command-line">
-<span class="output">Hi <em>username</em>! You've successfully authenticated, but GitHub does not</span>
-<span class="output">provide shell access.</span>
-</pre>
-
-</li>
-</ul>
-<p>小贴士:验证结果消息中包含的用户名。如果你看到一个包含“access denied “的错误,请参阅：”<a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="external">权限被拒绝文档</a>“</p>
-<ul>
-<li>4.如果你从HTTPS切换到SSH，你需要更新远程存储库的URL。</li>
-</ul>
-<p>**ok,如果以上都完成了,那我们GitHub端的工作已经完成,接下来,就是Hexo+GitHub的关联配置~~</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-GitHub系列教程/">Hexo+GitHub系列教程</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-史上最新版GitHub+Hexo配置系列教程-Hexo配置-一" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/21/史上最新版GitHub+Hexo配置系列教程-Hexo配置-一/" class="article-date">
-  	<time datetime="2016-03-21T02:14:43.000Z" itemprop="datePublished">2016-03-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/21/史上最新版GitHub+Hexo配置系列教程-Hexo配置-一/">史上最新版GitHub+Hexo配置系列教程-Hexo配置(一)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="为什么要写该系列教程"><a href="#为什么要写该系列教程" class="headerlink" title="为什么要写该系列教程"></a>为什么要写该系列教程</h2><p>因为最近在想搞一个自己的博客,发现GitHub+Hexo是最好的一个选择了,折腾了2天, 发现网上的教程虽然有很多,但是不全面,一步步操作下来并不能很好的完成博客的搭建, 写下这个教程,一是为了总结,二是为了让更多的人少走弯路,更快的搭建好自己的博客平台.</p>
-<h2 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h2><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>是一个快速、简洁且高效的博客框架,可以方便的生成静态网页托管在github和Heroku上。作者是来自台湾的<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">@tommy351</a>。引用<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">@tommy351</a>的话，<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>:</p>
-<ul>
-<li><p><strong>快速、简单且功能强大的 Node.js 博客框架。</strong></p>
-</li>
-<li><p><strong>A fast, simple &amp; powerful blog framework, powered by Node.js.</strong></p>
-</li>
-</ul>
-<p>类似于jekyll、Octopress、Wordpress，我们可以用hexo创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。<a href="suericze.github.io">本博客</a>即使用hexo创建并托管在github上。</p>
-<h2 id="为什么要用Hexo来写博客"><a href="#为什么要用Hexo来写博客" class="headerlink" title="为什么要用Hexo来写博客"></a>为什么要用Hexo来写博客</h2><p>引用原作者的话来说:</p>
-<ul>
-<li><p><strong>超快速度: Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</strong></p>
-</li>
-<li><p><strong>支持 Markdown: Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</strong></p>
-</li>
-<li><p><strong>一键部署: 只需一条指令即可部署到 GitHub Pages, Heroku 或其他网站。</strong></p>
-</li>
-<li><p><strong>丰富的插件: Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</strong></p>
-</li>
-</ul>
-<p>另外,还有几个优点另Hexo这么风靡:</p>
-<ul>
-<li><p>易用. 部署的话,就算是小白,也很简单, 而且平时用到的命令仅需要 <code><font color="#E27BB4" size="3">hexo new</font></code> <code><font color="#E27BB4" size="3">hexo server</font></code>    <code><font color="#E27BB4" size="3">hexo generate</font></code>     <code><font color="#E27BB4" size="3">hexo deploy</font></code>四个命令即可,不像Jekyll需要很多繁琐的<code><font color="#E27BB4" size="3">git</font></code>命令,而且目前命令已经可以缩写成<code><font color="#E27BB4" size="3">hexo n</font></code>   <code><font color="#E27BB4" size="3">hexo d</font></code>  <code><font color="#E27BB4" size="3">hexo s</font></code>  <code><font color="#E27BB4" size="3">hexo g</font></code>了,更加简单好记易用</p>
-</li>
-<li><p>轻便. 文件少,小,易理解,方便自定义更改</p>
-</li>
-<li><p>用户多. 用户的量级虽然比不上Jekyll,但遇到什么问题基本在网上搜索出来就能搞定了.</p>
-</li>
-</ul>
-<h2 id="使用Hexo需要花多大的成本"><a href="#使用Hexo需要花多大的成本" class="headerlink" title="使用Hexo需要花多大的成本"></a>使用Hexo需要花多大的成本</h2><ul>
-<li>这是一个免费的开源的博客框架,任何人都可以修改和使用</li>
-<li>Hexo的使用需要使用到GitHub,Git,MardDown,Node.js这几种工具,另外部分插件,主题,widget需要自己安装,设置.所以使用Hexo相对有一些计算机基础的人比较简单, 但是即使是小白,只要按照这个教程,也可以很快的入手.</li>
-</ul>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>本博客所用Hexo版本为3.2.0,部分文件或与其他版本不同.</li>
-<li>本教程只针对Windows版本,</li>
-</ul>
-<h1 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h1><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>下载并安装<a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git</a>即可完成.<br><a href="http://www.cnblogs.com/monodin/p/3268679.html" target="_blank" rel="external">安装教程</a></p>
-<ul>
-<li>查看Git安装是否完成,在win+r中输入cmd命令窗口弹出后,输入git –version查看git版本</li>
-</ul>
-<p><img src="http://7xs3op.com1.z0.glb.clouddn.com/git%E7%89%88%E6%9C%AC.png" alt=""></p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>windows环境下的Node.js的安装很简单,只需要<a href="https://nodejs.org/en/" target="_blank" rel="external">下载</a>客户端一路next就行了,我选择的是<a href="https://nodejs.org/dist/v4.4.0/node-v4.4.0-x64.msi" target="_blank" rel="external">v4.4.0LTS</a>版本64位的</p>
-<ul>
-<li>查看Node.js是否安装完成,在win+r中输入cmd命令窗口弹出后,输入node -v查看node版本</li>
-</ul>
-<p><img src="http://7xs3op.com1.z0.glb.clouddn.com/node%E7%89%88%E6%9C%AC.png" alt=""></p>
-<h2 id="安装Hexo-需要注意"><a href="#安装Hexo-需要注意" class="headerlink" title="安装Hexo (需要注意)"></a>安装Hexo (需要注意)</h2><h3 id="利用命令行安装hexo"><a href="#利用命令行安装hexo" class="headerlink" title="利用命令行安装hexo"></a>利用命令行安装hexo</h3><p>Node.js安装完成后,在电脑任意位置,右键,选择 <strong>GitBash</strong> ,执行npm命令</p>
-<ul>
-<li><strong>npm install -g hexo</strong></li>
-</ul>
-<h3 id="创建本地hexo文件夹-地址名字可自定义"><a href="#创建本地hexo文件夹-地址名字可自定义" class="headerlink" title="创建本地hexo文件夹(地址名字可自定义)"></a>创建本地hexo文件夹(地址名字可自定义)</h3><p>安装完成后,在本地选择一个目标文件夹(如:F:\Hexo),注意:在F:\Hexo文件夹内右键,选择<strong>GitBush</strong>,执行以下指令,<strong>Hexo</strong>就会自动在目标文件夹下创建建立网站所需要的文件,一分钟左右会执行完成</p>
-<ul>
-<li><strong>hexo init</strong></li>
-</ul>
-<p>效果如下:</p>
-<p><img src="http://7xs3op.com1.z0.glb.clouddn.com/hexo%E5%AE%8C%E6%88%90%E5%88%9D%E5%A7%8B%E5%8C%96.png" alt=""></p>
-<p>安装依赖包,该命令执行后没有什么提示,完成后的本地文件夹列表为图示,可能会有所不同</p>
-<ul>
-<li><strong>hexo install</strong></li>
-</ul>
-<p>初始化完成后目录图:<br><img src="http://7xs3op.com1.z0.glb.clouddn.com/hexo%E7%9B%AE%E5%BD%95.png" alt=""></p>
-<p><strong>注意</strong>:因Hexo 3.0以后把服务器独立成了单独的模块,所以还需要安装hexo-server才可以使用,执行命令</p>
-<ul>
-<li><strong>npm install hexo-server –save</strong></li>
-</ul>
-<h3 id="本地校验查看"><a href="#本地校验查看" class="headerlink" title="本地校验查看"></a>本地校验查看</h3><p>到目前为止,我们已经搭建起本地的hexo博客了,执行以下命令(在F:\Hexo)中,然后根据提示到浏览器中进行访问,地址为 <code><font color="#E27BB4" size="3">localhost:4000</font></code> </p>
-<ul>
-<li><strong>hexo g</strong>  或者 <strong>hexo generate</strong></li>
-<li><strong>hexo server</strong> 或者 <strong>hexo s</strong></li>
-</ul>
-<p>图示为:<br><img src="http://7xs3op.com1.z0.glb.clouddn.com/4000.png" alt=""></p>
-<p>如果访问成功,即代表了本地博客配置成功,但有以下几点需要注意</p>
-<ul>
-<li>每次想访问本地博客,至少需要执行<strong>hexo s</strong>命令,这样才相当于服务启动,然后才可访问</li>
-<li>有的电脑4000端口可能被占用,导致每次访问<strong>localhost:4000</strong>提示一直找不到网页,这时就需要修改端口号,执行命令 <strong>hexo s -p 5000</strong> 即代表使用<strong>-p</strong>将端口号改为了5000,访问网址为<strong>localhost:5000</strong></li>
-<li><img src="http://7xs3op.com1.z0.glb.clouddn.com/5000.png" alt=""></li>
-<li>成功图示 : </li>
-<li><img src="http://7xs3op.com1.z0.glb.clouddn.com/%E8%AE%BF%E9%97%AE%E6%88%90%E5%8A%9F.png" alt=""> </li>
-<li></li>
-<li>按下<strong>Ctrl+C</strong>即可停止服务</li>
-</ul>
-<p>ok,如果进行到这一步,本地博客已经成功搭建起来了,当然只能在本地开启服务的时候才能访问,别人是看不到的,下面我们就要部署到GitHub上面,将Hexo与GitHub进行关联起来;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-GitHub系列教程/">Hexo+GitHub系列教程</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
 </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 Eric
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
-  </div>
-</footer>
-    </div>
+
+    </header>
+    <div id="container">
+      <div id="main">
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2016/03/21/史上最新版GitHub-Hexo配置系列教程-Hexo-GitHub关联-三/" title="史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三" itemprop="url">
+  
+    <h1 itemprop="name">史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三</h1>
     
+     
+           <p itemprop="description" >上一篇中我们介绍了如何配置GitHub端的具体操作,接下来,就是将Hexo与GitHub进行关联,然后就是见证奇迹的时刻. Let’s Go!
+在Hexo配置文件中关联GitHub账号
+1.找到刚才所建的目录(F:\Hexo下),编辑 _config.yml,拖到最下方,找到de</p>
+        
+    
+    <time datetime="2016-03-21T14:58:49.000Z" itemprop="datePublished">2016-03-21</time>
+  </a>
+</section>
 
-<script>
-	var yiliaConfig = {
-		fancybox: undefined,
-		mathjax: undefined,
-		animate: undefined,
-		isHome: true,
-		isPost: false,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: undefined
-	}
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2016/03/21/史上最新版GitHub+Hexo配置系列教程-GitHub配置-二/" title="史上最新版GitHub+Hexo配置系列教程-GitHub配置-二" itemprop="url">
+  
+    <h1 itemprop="name">史上最新版GitHub+Hexo配置系列教程-GitHub配置-二</h1>
+    
+     
+           <p itemprop="description" >上一篇中我们介绍了如何搭建Hexo本地博客,现在我们开始配置GitHub并进行关联Hexo.Let’s Go!
+GitHub端操作注册GitHub在此处进行注册,操作比较简单,再次就不多做赘述,不熟悉的可以看该示例教程.
+创建Repository在自己GitHub主页点击右上角,</p>
+        
+    
+    <time datetime="2016-03-21T08:31:28.000Z" itemprop="datePublished">2016-03-21</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2016/03/21/史上最新版GitHub+Hexo配置系列教程-Hexo配置-一/" title="史上最新版GitHub+Hexo配置系列教程-Hexo配置(一)" itemprop="url">
+  
+    <h1 itemprop="name">史上最新版GitHub+Hexo配置系列教程-Hexo配置(一)</h1>
+    
+     
+           <p itemprop="description" >为什么要写该系列教程因为最近在想搞一个自己的博客,发现GitHub+Hexo是最好的一个选择了,折腾了2天, 发现网上的教程虽然有很多,但是不全面,一步步操作下来并不能很好的完成博客的搭建, 写下这个教程,一是为了总结,二是为了让更多的人少走弯路,更快的搭建好自己的博客平台.
+什</p>
+        
+    
+    <time datetime="2016-03-21T02:14:43.000Z" itemprop="datePublished">2016-03-21</time>
+  </a>
+</section>
+
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Hexo-GitHub系列教程/" title="Hexo+GitHub系列教程">Hexo+GitHub系列教程<sup>3</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Eric">Eric</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
 
 
 
 
 
 
-  </div>
-</body>
-</html>
+
+  </body>
+ </html>

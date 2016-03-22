@@ -1,150 +1,93 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三 | Small</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="上一篇中我们介绍了如何配置GitHub端的具体操作,接下来,就是将Hexo与GitHub进行关联,然后就是见证奇迹的时刻. Let’s Go!
+    <title>史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三 | Small</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Eric">
+    
+    <meta name="description" content="上一篇中我们介绍了如何配置GitHub端的具体操作,接下来,就是将Hexo与GitHub进行关联,然后就是见证奇迹的时刻. Let’s Go!
 在Hexo配置文件中关联GitHub账号
-1.找到刚才所建的目录(F:\Hexo下),编辑 _config.yml,拖到最下方,找到deploy标签,然后更为如下配置,注意:你自己在修改时,需要将 suericze修改为自己的用户名deploy:type:">
-<meta property="og:type" content="article">
-<meta property="og:title" content="史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三">
-<meta property="og:url" content="http://yoursite.com/2016/03/21/史上最新版GitHub-Hexo配置系列教程-Hexo-GitHub关联-三/index.html">
-<meta property="og:site_name" content="Small">
-<meta property="og:description" content="上一篇中我们介绍了如何配置GitHub端的具体操作,接下来,就是将Hexo与GitHub进行关联,然后就是见证奇迹的时刻. Let’s Go!
-在Hexo配置文件中关联GitHub账号
-1.找到刚才所建的目录(F:\Hexo下),编辑 _config.yml,拖到最下方,找到deploy标签,然后更为如下配置,注意:你自己在修改时,需要将 suericze修改为自己的用户名deploy:type:">
-<meta property="og:updated_time" content="2016-03-22T01:00:56.351Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三">
-<meta name="twitter:description" content="上一篇中我们介绍了如何配置GitHub端的具体操作,接下来,就是将Hexo与GitHub进行关联,然后就是见证奇迹的时刻. Let’s Go!
-在Hexo配置文件中关联GitHub账号
-1.找到刚才所建的目录(F:\Hexo下),编辑 _config.yml,拖到最下方,找到deploy标签,然后更为如下配置,注意:你自己在修改时,需要将 suericze修改为自己的用户名deploy:type:">
-  
-  
-  <link rel="stylesheet" href="/css/style.css">
+1.找到刚才所建的目录(F:\Hexo下),编辑 _config.yml,拖到最下方,找到deploy标签,然后更">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Eric</a></h1>
-		</hgroup>
-
+  <body>
+    <header>
+      <div>
 		
-		<p class="header-subtitle">没有什么不同</p>
-		
-
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-						</div>
-					</nav>
-				</section>
-				
-				
-				
-				
-
-				
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Small" title="Small"/></a>
 			</div>
-		</div>
-	</header>				
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Small">Small</a></h1>
+				<h2 class="blog-motto">没有什么不同</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Eric</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Eric</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">没有什么不同</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-
-      <div class="body-wrap"><article id="post-史上最新版GitHub-Hexo配置系列教程-Hexo-GitHub关联-三" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/21/史上最新版GitHub-Hexo配置系列教程-Hexo-GitHub关联-三/" class="article-date">
-  	<time datetime="2016-03-21T14:58:49.000Z" itemprop="datePublished">2016-03-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
+      <a href="/2016/03/21/史上最新版GitHub-Hexo配置系列教程-Hexo-GitHub关联-三/" title="史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三" itemprop="url">史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三</a>
+  </h1>
+  <p class="article-author">By
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-GitHub系列教程/">Hexo+GitHub系列教程</a></li></ul>
-	</div>
-
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
+      <a href="http://yoursite.com" title="Eric">Eric</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-03-21T14:58:49.000Z" itemprop="datePublished">2016-03-21</time>
+    更新日期:<time datetime="2016-03-22T01:00:56.351Z" itemprop="dateModified">2016-03-22</time>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一篇中我们介绍了如何配置GitHub端的具体操作,接下来,就是将Hexo与GitHub进行关联,然后就是见证奇迹的时刻. Let’s Go!</p>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在Hexo配置文件中关联GitHub账号"><span class="toc-number">1.</span> <span class="toc-text">在Hexo配置文件中关联GitHub账号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">1.1.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布一篇文章"><span class="toc-number">2.</span> <span class="toc-text">发布一篇文章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#发布文章"><span class="toc-number">2.1.</span> <span class="toc-text">发布文章</span></a></li></ol></li></ol>
+		</div>
+		
+		<p>上一篇中我们介绍了如何配置GitHub端的具体操作,接下来,就是将Hexo与GitHub进行关联,然后就是见证奇迹的时刻. Let’s Go!</p>
 <h2 id="在Hexo配置文件中关联GitHub账号"><a href="#在Hexo配置文件中关联GitHub账号" class="headerlink" title="在Hexo配置文件中关联GitHub账号"></a>在Hexo配置文件中关联GitHub账号</h2><ul>
 <li>1.找到刚才所建的目录(F:\Hexo下),编辑 <code><font size="3" color="#E87B8F">_config.yml</font></code>,拖到最下方,找到<strong>deploy</strong>标签,然后更为如下配置,<em>注意</em>:你自己在修改时,需要将 <em>suericze</em>修改为自己的用户名<td class="code"><pre><span class="label">deploy:</span><br>type: git<br>repository: <a href="https://github" target="_blank" rel="external">https://github</a><span class="preprocessor">.com</span>/suericze/suericze<span class="preprocessor">.github</span><span class="preprocessor">.io</span><span class="preprocessor">.git</span><br>branch: master<br></pre></td></li>
 <li>2.注意: 因yml格式问题,所有键值对的”:”冒号后面必须跟有一个空格</li>
@@ -199,70 +142,208 @@ tags: [Test] #分类标签
 </ul>
 <p>小贴士:当然,你也可以执行<code><font size="3" color="#E87B8F">hexo g</font></code>和<code><font size="3" color="#E87B8F">hexo s</font></code>命令在本地打开<code><font size="3" color="#E87B8F">localhost:4000</font></code>进行本地访问,然后在同步到GitHub上.</p>
 <p>ok,到此,你的Hexo博客已经完全搭建起来了,你自己也可以访问自己的独有站点,开启你的博客旅程吧,后期将写到Hexo的优化,欢迎童鞋们查阅~~~</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
-      
-    </div>
-    
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Hexo-GitHub系列教程/">Hexo+GitHub系列教程</a>
   </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2016/03/21/史上最新版GitHub+Hexo配置系列教程-GitHub配置-二/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">史上最新版GitHub+Hexo配置系列教程-GitHub配置-二</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
-</article>
 
 
 
 
+<div class="article-share" id="share">
 
-
-
+  <div data-url="http://yoursite.com/2016/03/21/史上最新版GitHub-Hexo配置系列教程-Hexo-GitHub关联-三/" data-title="史上最新版GitHub+Hexo配置系列教程-Hexo+GitHub关联-三 | Small" data-tsina="null" class="share clearfix">
+  </div>
 
 </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 Eric
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/03/21/史上最新版GitHub+Hexo配置系列教程-GitHub配置-二/"  title="史上最新版GitHub+Hexo配置系列教程-GitHub配置-二">
+ <strong>NEXT:</strong><br/> 
+ <span>史上最新版GitHub+Hexo配置系列教程-GitHub配置-二
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在Hexo配置文件中关联GitHub账号"><span class="toc-number">1.</span> <span class="toc-text">在Hexo配置文件中关联GitHub账号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">1.1.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布一篇文章"><span class="toc-number">2.</span> <span class="toc-text">发布一篇文章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#发布文章"><span class="toc-number">2.1.</span> <span class="toc-text">发布文章</span></a></li></ol></li></ol>
   </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Hexo-GitHub系列教程/" title="Hexo+GitHub系列教程">Hexo+GitHub系列教程<sup>3</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Eric">Eric</a>
+		
+		</p>
+</div>
 </footer>
-    </div>
-    
-
-<script>
-	var yiliaConfig = {
-		fancybox: undefined,
-		mathjax: undefined,
-		animate: undefined,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: undefined
-	}
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
 
 
 
 
-  </div>
-</body>
+  </body>
 </html>
