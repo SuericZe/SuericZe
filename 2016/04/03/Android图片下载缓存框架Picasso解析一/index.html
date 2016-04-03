@@ -1,0 +1,409 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Android图片下载缓存框架Picasso解析一 | SmallCheric&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Eric">
+    
+    <meta name="description" content="Picasso介绍Picasso是Square公司开源的一个Android图形缓存库
+
+A powerful image downloading and caching library for Android一个Android下强大的图片下载缓存库
+
+Picasso实现了图片的异步加载,并解决了An">
+    
+    
+    
+    
+    <link rel="alternate" href="suericze.github.io" title="SmallCheric&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="SmallCheric&#39;s Blog" title="SmallCheric&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SmallCheric&#39;s Blog">SmallCheric&#39;s Blog</a></h1>
+				<h2 class="blog-motto">只要为了梦想不服输, 再苦也不停止脚步~~</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/tags">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/03/Android图片下载缓存框架Picasso解析一/" title="Android图片下载缓存框架Picasso解析一" itemprop="url">Android图片下载缓存框架Picasso解析一</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="Eric">Eric</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-04-03T02:40:12.000Z" itemprop="datePublished">2016-04-03</time>
+    更新日期:<time datetime="2016-04-03T02:53:59.508Z" itemprop="dateModified">2016-04-03</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Picasso介绍"><span class="toc-number">1.</span> <span class="toc-text">Picasso介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要用Picasso"><span class="toc-number">2.</span> <span class="toc-text">为什么要用Picasso</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将Picasso加入到你的项目中"><span class="toc-number">3.</span> <span class="toc-text">将Picasso加入到你的项目中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小试牛刀-从网络加载一张图片"><span class="toc-number">4.</span> <span class="toc-text">小试牛刀:从网络加载一张图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片的其他加载方式"><span class="toc-number">5.</span> <span class="toc-text">图片的其他加载方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#从Android-Resources-中加载"><span class="toc-number">5.1.</span> <span class="toc-text">从Android Resources 中加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从URI地址中加载"><span class="toc-number">5.2.</span> <span class="toc-text">从URI地址中加载</span></a></li></ol></li></ol>
+		</div>
+		
+		<h2 id="Picasso介绍"><a href="#Picasso介绍" class="headerlink" title="Picasso介绍"></a>Picasso介绍</h2><p><a href="http://square.github.io/picasso/" target="_blank" rel="external">Picasso</a>是Square公司开源的一个Android图形缓存库</p>
+<blockquote>
+<p>A powerful image downloading and caching library for Android<br>一个Android下强大的图片下载缓存库</p>
+</blockquote>
+<p>Picasso实现了图片的异步加载,并解决了Android中加载图片时常见的一些问题,它有以下特点:  </p>
+<ul>
+<li>在<code>Adapter</code>中取消了不在视图范围内的<code>ImageView</code>的资源加载,因为可能会产生图片错位;</li>
+<li>使用复杂的图片转换技术降低内存的使用</li>
+<li>自带内存和硬盘的二级缓存机制</li>
+</ul>
+<h2 id="为什么要用Picasso"><a href="#为什么要用Picasso" class="headerlink" title="为什么要用Picasso"></a>为什么要用Picasso</h2><p>　　Android系统作为图片资源加载的主角,它是通过图像的像素点来把图像加载到内存中的;现在一张500W的摄像头拍出的照片(2592x1936),加载到内存中需要大约19M的内存;如果你加入了信号强度不一的网络中进行了复杂的网络请求,并进行图片的缓存与其他处理,你会耗费大量的时间与精力来处理这些问题,但如果用了Picasso, 这些问题都一消而散;</p>
+<h2 id="将Picasso加入到你的项目中"><a href="#将Picasso加入到你的项目中" class="headerlink" title="将Picasso加入到你的项目中"></a>将Picasso加入到你的项目中</h2><p>　目前Picasso的最新版本是2.5.2,你可以下载对应的<a href="https://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar" target="_blank" rel="external">Jar包</a>,将Jar包添加到你的项目中,或者在<code>build.gradle</code>配置文件中加入</p>
+<pre>compile 'com.squareup.picasso:picasso:2.5.2'</pre>
+
+<p><strong>注意</strong>如果你开启了混淆,你需要将以下代码添加到混淆规则文件中:<pre>-dontwarn com.squareup.okhttp.**</pre></p>
+<h2 id="小试牛刀-从网络加载一张图片"><a href="#小试牛刀-从网络加载一张图片" class="headerlink" title="小试牛刀:从网络加载一张图片"></a>小试牛刀:从网络加载一张图片</h2><p>Picasso使用简单易用的接口,并有一个实现类<code>Picasso</code>,一个完整的功能请求至少需要三个参数;</p>
+<ul>
+<li><code>with(Context context)</code> - <code>Context</code>上下文在很多Android Api中都是必须的</li>
+<li><code>load(String imageUrl)</code> - 图片网络加载地址</li>
+<li><code>into(ImageView targetImageView)</code> - 想进行图片展示的<code>ImageView</code></li>
+</ul>
+<p>简单用例:</p>
+<pre>ImageView targetImageView = (ImageView) findViewById(R.id.imageView);
+String internetUrl = "http://www.jycoder.com/json/Image/1.jpg";
+
+Picasso
+    .with(context)
+    .load(internetUrl)
+    .into(targetImageView);
+</pre>
+
+<p>　　就是这么简单,如果你的 <code>URL</code>地址正确并且图片存在,在几秒中之内就能看到这张图片了;如果图片资源不存在,Picasso也会有错误的回调,现在你已经看到了只需3行代码就能加载图片了,当然这只是冰山一角,让我们继续揭开Picasso的神秘面纱;</p>
+<h2 id="图片的其他加载方式"><a href="#图片的其他加载方式" class="headerlink" title="图片的其他加载方式"></a>图片的其他加载方式</h2><p>　　Picasso的图片不仅仅能加载网络资源,也能从本地文件,Android项目资源,以及<code>URI</code>地址进行图片加载,下面我们就对这三种方式进行实例说明;</p>
+<h3 id="从Android-Resources-中加载"><a href="#从Android-Resources-中加载" class="headerlink" title="从Android Resources 中加载"></a>从Android Resources 中加载</h3><p>　　代码也是三行,只需要将网络资源地址更改为一个<code>int</code>值地址即可,上代码:</p>
+<pre>
+ImageView targetImageView = (ImageView) findViewById(R.id.imageView);
+int resourceId = R.mipmap.ic_launcher;
+
+Picasso
+    .with(context)
+    .load(resourceId)
+    .into(targetImageView);</pre>
+**注意:** `R.mipmap`是`Android Studio`中新的资源引用路径,这个老司机都知道.
+
+### 从本地File文件中加载
+
+　　如果你让用户选择本地的一张图片进行展示的话，就需要用到这个加载方式了，当然，也是So Easy,只需要将地址更换为一个`File`即可,上代码:
+<pre>
+ImageView targetImageView = (ImageView) findViewById(R.id.imageView);
+File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Running.jpg");
+
+Picasso
+    .with(context)
+    .load(file)
+    .into(targetImageView);</pre>
+
+<p><strong>注意:</strong>这个<code>file</code>并不一定非得是在你的设备中,可以是任意的路径,只要是File路径即可;</p>
+<h3 id="从URI地址中加载"><a href="#从URI地址中加载" class="headerlink" title="从URI地址中加载"></a>从<code>URI</code>地址中加载</h3><p>　　这个请求方式相比其他也并没有什么不同,上代码:</p>
+<pre>
+public static final String ANDROID_RESOURCE = "android.resource://";
+public static final String FOREWARD_SLASH = "/";
+
+private static Uri resourceIdToUri(Context context, int resourceId) {
+    return Uri.parse(ANDROID_RESOURCE + context.getPackageName() + FOREWARD_SLASH + resourceId);
+}
+
+Uri uri = resourceIdToUri(context, R.mipmap.future_studio_launcher);
+ImageView targetImageView = (ImageView) findViewById(R.id.imageView);
+
+Picasso  
+    .with(context)
+    .load(uri)
+    .into(targetImageView);</pre>
+
+<p><strong>注意:</strong>为了示范,只能用资源文件转换为<code>URI</code>,并不仅仅是这种方式, 它可以支持任意的<code>URI</code>地址;</p>
+<p>OK,到此我们已经对Picasso有一个基本的认识和了解了,跟着我的脚步,继续发现Picasso更多好玩的功能,下面会介绍Picasso在<code>ListView</code>及<code>GridView</code>的用法,愿大家都有美好的一天~~</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Picasso/">Picasso</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/04/03/Android图片下载缓存框架Picasso解析一/" data-title="Android图片下载缓存框架Picasso解析一 | SmallCheric&#39;s Blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/03/27/Android-Studio-插件小结/"  title="Android Studio 插件小结">
+ <strong>NEXT:</strong><br/> 
+ <span>Android Studio 插件小结
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Picasso介绍"><span class="toc-number">1.</span> <span class="toc-text">Picasso介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要用Picasso"><span class="toc-number">2.</span> <span class="toc-text">为什么要用Picasso</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将Picasso加入到你的项目中"><span class="toc-number">3.</span> <span class="toc-text">将Picasso加入到你的项目中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小试牛刀-从网络加载一张图片"><span class="toc-number">4.</span> <span class="toc-text">小试牛刀:从网络加载一张图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片的其他加载方式"><span class="toc-number">5.</span> <span class="toc-text">图片的其他加载方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#从Android-Resources-中加载"><span class="toc-number">5.1.</span> <span class="toc-text">从Android Resources 中加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从URI地址中加载"><span class="toc-number">5.2.</span> <span class="toc-text">从URI地址中加载</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android-Studio/" title="Android Studio">Android Studio<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Hexo-GitHub系列教程/" title="Hexo+GitHub系列教程">Hexo+GitHub系列教程<sup>4</sup></a></li>
+		
+			<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Picasso/" title="Picasso">Picasso<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="suericze.github.io" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		<a href="https://github.com/https://github.com/suericze" target="_blank" title="github"></a>
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Eric">Eric</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"smallcheric"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?f3a9564b90b6c0b1c7ca1a50c07179cc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  </body>
+</html>
